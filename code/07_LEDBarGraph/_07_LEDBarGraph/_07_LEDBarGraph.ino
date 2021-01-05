@@ -18,7 +18,7 @@ int pin8 = 8;
 int pin9 = 9;
 int pin10 = 10;           //definition digital 10 pins as pin to control the LED  
 
-int potentiometerPin = 0; // potentiometer connected to analog pin 3
+int potentiometerPin = 10; // potentiometer connected to analog pin 10
 
 void setup()
 {
@@ -37,7 +37,7 @@ void setup()
 void loop() 
 {
    float a = analogRead(potentiometerPin);//Read the voltage photoresistance
-   a = map(a,0,1023,0,11);    //Photoresistor voltage value converted from 0-1023 to 0-11
+   a = map(a,0,1023,0,16);    // Map potentiometer across analog pins
    for(int i=1;i<=a;i++){
       digitalWrite(i,LOW);    //HIGH is set to about 5V PIN8
    }
